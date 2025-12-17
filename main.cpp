@@ -1,5 +1,5 @@
 #include "safetensor_parser.hpp"
-#include "fp16_converter.hpp"
+#include "fp_converter.hpp"
 #include <iostream>
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
     fp16_data.reserve(fp32_data.size());
 
     for (float x : fp32_data) {
-        fp16_data.push_back(fp16::float32_to_float16(x));
+        fp16_data.push_back(fp16::float32_to_fp16(x));
     }
 
     std::cout << "Converted to FP16, count = " << fp16_data.size() << "\n";
